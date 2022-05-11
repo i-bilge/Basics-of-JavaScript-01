@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<title></title>
+<body>
+    <button onclick="eventCode()">My Button</button>
+    <script>
+        function funktionName(parameter1, parameter2) {
+            //Do something
+            return parameter1 * parameter2;
+        }
+
+        alert(functionName(2,3));
+
+        //Function without "return"
+        function functionWithoutReturn(parameter1, parameter2) {
+            alert("This is a function without 'return' statement");
+        }
+
+        functionWithoutReturn();
+        
+        //Parameter defaults
+        function functionName2(x,y) {
+            if (y == undefined){
+                y=0;
+            }
+        }
+
+        //The Argument Object
+        x = findMax(1, 123, 500, 115, 44, 88);
+
+        function findMax() {
+            var i, max = 0;
+            for (i = 0; i < arguments.length; i++){
+                if (arguments[i]>max){
+                max = arguments[i]
+                }
+            }
+            return max;
+        }
+    </script>
+</body>
+</html>
