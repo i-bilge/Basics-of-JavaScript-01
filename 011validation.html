@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter a number</p>
+    <input id="numberBox" type="number" min="10" max="100"> <!--these are validation rules-->
+    <button onclick="validate()">Send</button>
+    <p id="demo"></p>
+
+    <script>
+        //these are:
+            //disabled, readonly, max, min, pattern(eg; [A-Za-z]{3}), required, type, maxlength, novalidate
+        function validate(){
+            var numberEntered = document.getElementById("numberBox");
+            if(numberEntered.checkValidity() == false){
+                document.getElementById("demo").innerHTML = numberEntered.validationMessage;
+            }
+            else{
+                document.getElementById("demo").innerHTML = "Input OK";
+            }
+        }
+    </script>
+</body>
+</html>

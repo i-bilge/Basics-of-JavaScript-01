@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .intro1 {
+            background-color: red;
+        }
+        .intro2 {
+            background-color: violet;
+        }
+        .intro3 {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p class="intro1" id="intro1">My first paragraph</p>
+    <p class="intro2" id="intro2">My second paragraph</p>
+    <p class="intro3" id="intro3">My third paragraph</p>
+
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+    </ul>
+
+    <p id="message"></p>
+    <input type="text" name="customerName" value="Ismail Bilge">
+
+    <h1>Try it</h1>
+    <h1 id="tryIt">Try it</h1>
+
+    <p id="nodes">
+        Node value
+    </p>
+
+    <div id="div1">
+        <p id="p1">
+            This is p1
+        </p>
+        <p id="p2">
+            This is p2
+        </p>
+    </div>
+
+
+    <script>// now we re going to use DOM Elements
+        alert("Reading with getElementById");
+        var firstParagraph = document.getElementById("intro1");
+        var message = document.getElementById("message");
+        message.innerHTML = "Message : " + firstParagraph.innerHTML;
+
+
+        alert("Reading with getElementByTagName");
+        var allUnorderedLists = document.getElementById("intro1");
+        var unorderedList = allUnorderedLists[0];
+        
+        var allListItems = document.getElementById("li");
+
+        for(var i = 0; i< allListItems.length; i++) {
+            alert(allListItems[i].firsrChild.data);
+        }
+
+
+        alert("Reading with getElementClassName");
+        var allItemsClassName = document.getElementsByClassName("intro1");
+        alert(allItemsClassName[0].innerHTML);
+
+
+        alert("Reading with QuerrySelectorAll");
+        var allItemsWithSelector = document.querySelectorAll("p.intro2");
+        alert(allItemsWithSelector[0].innerHTML);
+
+        alert("Reading with getElementsByName");
+        var names = document.getElementsByName("customerName");
+        alert(names[0].value);
+
+
+        alert("changing with addEventsListener");
+        document.getElementById("tryIt").addEventListener("click", changeColor);
+
+        function changeColor() {
+            document.getElementById("intro1").style.color = "blue";
+        }
+
+
+        alert("changing with removeEventsListener");
+        document.getElementById("tryIt").removeEventListener(("click", changeColor));
+
+        alert("workingWithNodes");
+        var nodeText = document.getElementById("nodes").childNodes[0].nodeValue;
+        alert(nodeText);
+        //now we are gonna create a new tag in html:
+        var heading = document.createElement("h2");
+        var node = document.createTextNode("Hello JavaScript");
+        heading.appendChild(node);
+        // now we re going to locate this new heading in html:
+        var div1 = document.getElementById("div1");
+        var p2 = doc.getElementById("p2");
+        div1.insertBefore(heading, p2);//we can also remove or replace.
+
+    </script>
+
+</body>
+</html>

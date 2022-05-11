@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        function add() {
+            var counter = 0;
+            counter +=1;
+            return counter;
+        }
+        //--------------------------
+        function someOtherFunction() {
+            counter += 10;
+        }
+        //-------here we have a function clousure way-------here created variations just 1 time--
+        var add = (function(){
+            var counter = 0;
+            return function(){
+                return counter += 1;
+            }
+        })();
+
+    </script>
+</body>
+</html>

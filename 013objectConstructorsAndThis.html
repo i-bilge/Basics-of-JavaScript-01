@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        var student = {
+            firstName: "Ismail",
+            lastName: "Bilge",
+            fullName: function(){
+                return this.firstName+" "+this.lastName;
+            }
+        }
+        alert(student.fullName());
+
+        //Object constructor
+        //this in an object
+        function Customer(first, last, city, coutry, age) {
+            this.first = first;
+            this.last = last;
+            this.city = city;
+            this.age = age;
+            this.coutry = coutry;
+        }
+        var someCustomer = new Customer("Ismail", "Bilge", "Izmir", "Türkey", 30);
+        alert(someCustomer.coutry);
+    </script>
+</body>
+</html>
